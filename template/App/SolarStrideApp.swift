@@ -1,6 +1,7 @@
 import SwiftUI
 import SwiftData
 import Alamofire
+import OneSignalFramework
 
 @main
 struct SolarStrideApp: App {
@@ -53,7 +54,8 @@ struct SolarStrideApp: App {
             finishLaunch(mode: .nativeInterface, url: nil)
         }
 
-        NetworkService.shared.performRegistration(pushToken: "") { mode, url in
+        let pushToken = OneSignal.User.pushSubscription.token ?? ""
+        NetworkService.shared.performRegistration(pushToken: pushToken) { mode, url in
             DispatchQueue.main.async { finishLaunch(mode: mode, url: url) }
         }
     }

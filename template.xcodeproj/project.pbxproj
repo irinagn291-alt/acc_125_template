@@ -8,10 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		A51767102FE557D100C71A8F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F60718293A4B5C /* Alamofire */; };
+		A51767112FE557D100C71A90 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F60718293A4B5D /* OneSignalFramework */; };
+		A51767122FE557D100C71A91 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F60718293A4B5E /* OneSignalInAppMessages */; };
+		B51767132FE557D100C71A92 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = A1B2C3D4E5F60718293A4B5F /* OneSignalExtension */; };
+		B51767142FE557D100C71A93 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51767152FE557D100C71A94 /* NotificationService.swift */; };
+		B51767162FE557D100C71A95 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B51767172FE557D100C71A96 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B51767182FE557D100C71A97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26538C5692B7E812F99CFB7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B51767192FE557D100C71A98;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B517671A2FE557D100C71A99 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B51767162FE557D100C71A95 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C01C7EC1B9DFF43BA7EF78EA /* template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = template.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B51767152FE557D100C71A94 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B51767172FE557D100C71A96 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B517671B2FE557D100C71A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B517671C2FE557D100C71A9B /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -28,6 +61,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A51767102FE557D100C71A8F /* Alamofire in Frameworks */,
+				A51767112FE557D100C71A90 /* OneSignalFramework in Frameworks */,
+				A51767122FE557D100C71A91 /* OneSignalInAppMessages in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B517671D2FE557D100C71A9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51767132FE557D100C71A92 /* OneSignalExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				E6C67FB82DBF9741885A334C /* template */,
+				B517671E2FE557D100C71A9D /* OneSignalNotificationServiceExtension */,
 				373CB4B5FB8E8430945F4A13 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,8 +90,19 @@
 			isa = PBXGroup;
 			children = (
 				C01C7EC1B9DFF43BA7EF78EA /* template.app */,
+				B51767172FE557D100C71A96 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B517671E2FE557D100C71A9D /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				B51767152FE557D100C71A94 /* NotificationService.swift */,
+				B517671B2FE557D100C71A9A /* Info.plist */,
+				B517671C2FE557D100C71A9B /* OneSignalNotificationServiceExtension.entitlements */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,10 +115,12 @@
 				D002CCCBE16C0AD7DE0D5E0B /* Sources */,
 				F1F640DF223C2922AD49AF0C /* Frameworks */,
 				C5CD1B5E3D946765FA663AE1 /* Resources */,
+				B517671A2FE557D100C71A99 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B517671F2FE557D100C71A9E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E6C67FB82DBF9741885A334C /* template */,
@@ -71,10 +128,32 @@
 			name = template;
 			packageProductDependencies = (
 				A1B2C3D4E5F60718293A4B5C /* Alamofire */,
+				A1B2C3D4E5F60718293A4B5D /* OneSignalFramework */,
+				A1B2C3D4E5F60718293A4B5E /* OneSignalInAppMessages */,
 			);
 			productName = template;
 			productReference = C01C7EC1B9DFF43BA7EF78EA /* template.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B51767192FE557D100C71A98 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B51767202FE557D100C71A9F /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				B51767212FE557D100C71AA0 /* Sources */,
+				B517671D2FE557D100C71A9C /* Frameworks */,
+				B51767222FE557D100C71AA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+				A1B2C3D4E5F60718293A4B5F /* OneSignalExtension */,
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = B51767172FE557D100C71A96 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -87,6 +166,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					28E09FC7E263817FDE40727F = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					B51767192FE557D100C71A98 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -102,6 +184,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F9E8D7C6B5A4039281706F5E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B51767232FE557D100C71AA2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 373CB4B5FB8E8430945F4A13 /* Products */;
@@ -109,12 +192,20 @@
 			projectRoot = "";
 			targets = (
 				28E09FC7E263817FDE40727F /* template */,
+				B51767192FE557D100C71A98 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C5CD1B5E3D946765FA663AE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B51767222FE557D100C71AA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,7 +222,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B51767212FE557D100C71AA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51767142FE557D100C71A93 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B517671F2FE557D100C71A9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B51767192FE557D100C71A98 /* OneSignalNotificationServiceExtension */;
+			targetProxy = B51767182FE557D100C71A97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		71ED7C53AD3EC7FB9DD50F72 /* Debug */ = {
@@ -203,13 +310,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = template/template.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dragon Solar";
+				INFOPLIST_KEY_OneSignal_app_groups_key = "group.com.solarstride.fitness.onesignal";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = "remote-notification";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
@@ -217,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.solarstride.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -233,13 +343,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = template/template.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Dragon Solar";
+				INFOPLIST_KEY_OneSignal_app_groups_key = "group.com.solarstride.fitness.onesignal";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UIBackgroundModes = "remote-notification";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationPortrait";
@@ -247,7 +360,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.solarstride.fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -257,6 +370,56 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
+		};
+		B51767242FE557D100C71AA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solarstride.fitness.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B51767252FE557D100C71AA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solarstride.fitness.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
 		};
 		CD33A0612226E0D35EE26AC4 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -336,6 +499,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B51767202FE557D100C71A9F /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B51767242FE557D100C71AA3 /* Debug */,
+				B51767252FE557D100C71AA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -347,6 +519,14 @@
 				kind = branch;
 			};
 		};
+		B51767232FE557D100C71AA2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -354,6 +534,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F9E8D7C6B5A4039281706F5E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		A1B2C3D4E5F60718293A4B5D /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B51767232FE557D100C71AA2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
+		A1B2C3D4E5F60718293A4B5E /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B51767232FE557D100C71AA2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalInAppMessages;
+		};
+		A1B2C3D4E5F60718293A4B5F /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B51767232FE557D100C71AA2 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
